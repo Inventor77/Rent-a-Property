@@ -15,31 +15,22 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 
 const pages = ['Rent', 'Buy', 'Sell'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
     const [anchorElNav, setAnchorElNav] = useState(null);
-    const [anchorElUser, setAnchorElUser] = useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
     };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
-
     return (
         <AppBar
             position="static"
-            sx={{ background: "#FBFAFF"}}
+            sx={{ background: "#FBFAFF" }}
         >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
@@ -117,7 +108,7 @@ function Header() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        Estatery
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
@@ -132,30 +123,8 @@ function Header() {
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <Button variant="contained">Contained</Button>
-                        <Button variant="outlined">Outlined</Button>
-                        <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
+                        <Button variant="outlined" sx={{ borderRadius: "6px", fontSize: "13px", padding: "8px 24px", mr: "16px", fontWeight: '700' }}>Login</Button>
+                        <Button variant="contained" sx={{ borderRadius: "6px", fontSize: "13px", padding: "8px 24px", fontWeight: '700' }}>Sign up</Button>
                     </Box>
                 </Toolbar>
             </Container>
