@@ -59,9 +59,10 @@ function Header() {
                             aria-label='account of current user'
                             aria-controls='menu-appbar'
                             aria-haspopup='true'
-                            onClick={handleOpenNavMenu}
-                            color='inherit'>
-                            <MenuRoundedIcon />
+                            onClick={handleOpenNavMenu}>
+                            <MenuRoundedIcon 
+                            sx={{color: "#000000"}}
+                            />
                         </IconButton>
                         <Menu
                             id='menu-appbar'
