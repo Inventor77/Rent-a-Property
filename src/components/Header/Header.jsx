@@ -43,16 +43,12 @@ function Header() {
                     <Typography
                         variant='h6'
                         noWrap
-                        href='/'
+                        href=''
                         component='a'
+                        className="logo"
                         sx={{
                             mr: 12,
                             display: { xs: "none", md: "flex" },
-                            fontFamily: "monospace",
-                            fontWeight: 700,
-                            letterSpacing: "1px",
-                            color: "#000000",
-                            textDecoration: "none",
                         }}>
                         Estatery
                     </Typography>
@@ -92,31 +88,31 @@ function Header() {
                         </Menu>
                     </Box>
                     <HouseRoundedIcon
-                        sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+                        sx={{ display: { xs: "flex", md: "none" }, mr: 1, color: "#6F65EF", }}
                     />
                     <Typography
                         variant='h5'
                         noWrap
                         component='a'
                         href=''
+                        className="logo"
                         sx={{
                             mr: 2,
                             display: { xs: "flex", md: "none" },
                             flexGrow: 1,
-                            fontFamily: "monospace",
-                            fontWeight: 700,
-                            letterSpacing: ".3rem",
-                            color: "inherit",
-                            textDecoration: "none",
                         }}>
                         Estatery
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                        {pages.map((page) => (
+                        {pages.map((page, idx) => (
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: "white", display: "block" }}>
+                                sx={{
+                                    color: idx !== 0 ? "#000000" : "#6F65EF",
+                                    background: idx !== 0 ? "transparent" : "#E5E3FD"
+                                }}
+                                className="tab btn">
                                 {page}
                             </Button>
                         ))}
