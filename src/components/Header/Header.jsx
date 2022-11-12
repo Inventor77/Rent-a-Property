@@ -10,11 +10,11 @@ import {
     Button,
     MenuItem,
 } from "@mui/material";
-import HouseRoundedIcon from '@mui/icons-material/HouseRounded';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import HouseRoundedIcon from "@mui/icons-material/HouseRounded";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import "./Header.scss";
 
-
-const pages = ['Rent', 'Buy', 'Sell'];
+const pages = ["Rent", "Buy", "Sell"];
 
 function Header() {
     const [anchorElNav, setAnchorElNav] = useState(null);
@@ -28,103 +28,107 @@ function Header() {
     };
 
     return (
-        <AppBar
-            position="static"
-            sx={{ background: "#FBFAFF" }}
-        >
-            <Container maxWidth="xl">
+        <AppBar position='static' sx={{ background: "#FBFAFF" }}>
+            <Container maxWidth='xl'>
                 <Toolbar disableGutters>
                     <HouseRoundedIcon
-                        fontSize="large"
-                        sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, mb: '4px', color: "#6F65EF" }} />
+                        fontSize='large'
+                        sx={{
+                            display: { xs: "none", md: "flex" },
+                            mr: 1,
+                            mb: "4px",
+                            color: "#6F65EF",
+                        }}
+                    />
                     <Typography
-                        variant="h6"
+                        variant='h6'
                         noWrap
-                        href="/"
-                        component="a"
+                        href='/'
+                        component='a'
                         sx={{
                             mr: 12,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
+                            display: { xs: "none", md: "flex" },
+                            fontFamily: "monospace",
                             fontWeight: 700,
-                            letterSpacing: '1px',
-                            color: '#000000',
-                            textDecoration: "none"
-                        }}
-                    >
+                            letterSpacing: "1px",
+                            color: "#000000",
+                            textDecoration: "none",
+                        }}>
                         Estatery
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                         <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
+                            size='large'
+                            aria-label='account of current user'
+                            aria-controls='menu-appbar'
+                            aria-haspopup='true'
                             onClick={handleOpenNavMenu}
-                            color="inherit"
-                        >
+                            color='inherit'>
                             <MenuRoundedIcon />
                         </IconButton>
                         <Menu
-                            id="menu-appbar"
+                            id='menu-appbar'
                             anchorEl={anchorElNav}
                             anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
+                                vertical: "bottom",
+                                horizontal: "left",
                             }}
                             keepMounted
                             transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
+                                vertical: "top",
+                                horizontal: "left",
                             }}
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: { xs: 'block', md: 'none' },
-                            }}
-                        >
+                                display: { xs: "block", md: "none" },
+                            }}>
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <Typography textAlign='center'>{page}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    <HouseRoundedIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                    <HouseRoundedIcon
+                        sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+                    />
                     <Typography
-                        variant="h5"
+                        variant='h5'
                         noWrap
-                        component="a"
-                        href=""
+                        component='a'
+                        href=''
                         sx={{
                             mr: 2,
-                            display: { xs: 'flex', md: 'none' },
+                            display: { xs: "flex", md: "none" },
                             flexGrow: 1,
-                            fontFamily: 'monospace',
+                            fontFamily: "monospace",
                             fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
+                            letterSpacing: ".3rem",
+                            color: "inherit",
+                            textDecoration: "none",
+                        }}>
                         Estatery
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
+                                sx={{ my: 2, color: "white", display: "block" }}>
                                 {page}
                             </Button>
                         ))}
                     </Box>
 
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Button variant="outlined" sx={{ borderRadius: "6px", fontSize: "13px", padding: "8px 24px", mr: "16px", fontWeight: '700' }}>Login</Button>
-                        <Button variant="contained" sx={{ borderRadius: "6px", fontSize: "13px", padding: "8px 24px", fontWeight: '700' }}>Sign up</Button>
+                    <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }} className="noWrap">
+                        <Button variant='outlined' className='btn'>
+                            Login
+                        </Button>
+                        <Button variant='contained' className='btn'>
+                            Sign up
+                        </Button>
                     </Box>
                 </Toolbar>
             </Container>

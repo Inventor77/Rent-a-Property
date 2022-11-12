@@ -1,0 +1,18 @@
+.noWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+}
+
+.btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+	border-radius: 6px !important;
+	font-size: 13px !important;
+	padding: 8px 24px !important;
+	font-weight: 700 !important;
+    white-space: nowrap;
+}
