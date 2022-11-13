@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	Container,
 	Button,
@@ -25,14 +25,18 @@ const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
 	fontSize: "16px",
 }));
 
+const PRICE_RANGE = ["All", 500, 1500, 2500];
+
 function Filter() {
+	const [priceRange, setPriceRange] = useState("All");
+
 	return (
 		<Container className='filter_container'>
 			<FormControl size='small' sx={{ width: "25ch" }} variant='outlined'>
 				<StyledFormHelperText>Location</StyledFormHelperText>
 				<StyledSelect
-					// value={}
-					// onChange={handleChange}
+				// value={}
+				// onChange={handleChange}
 				></StyledSelect>
 			</FormControl>
 			<Divider orientation='vertical' flexItem />
@@ -47,9 +51,14 @@ function Filter() {
 			<FormControl size='small' sx={{ width: "25ch" }} variant='outlined'>
 				<StyledFormHelperText>Price</StyledFormHelperText>
 				<StyledSelect
-				// value={}
-				// onChange={handleChange}
-				></StyledSelect>
+					value={priceRange}
+					onChange={(e) => setPriceRange(e.target.value)}>
+					{PRICE_RANGE.map((val) => (
+						<MenuItem value={val} key={val}>
+							{val === "All" ? "All" : `$${val} - $${val + 1000}`}{" "}
+						</MenuItem>
+					))}
+				</StyledSelect>
 			</FormControl>
 			<Divider orientation='vertical' flexItem />
 			<FormControl size='small' sx={{ width: "25ch" }} variant='outlined'>
