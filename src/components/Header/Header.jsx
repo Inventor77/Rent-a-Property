@@ -29,7 +29,7 @@ function Header() {
 
     return (
         <AppBar position='static' sx={{ background: "#FBFAFF" }}>
-            <Container maxWidth='xl'>
+            <Container maxWidth='xl' disableGutters>
                 <Toolbar disableGutters>
                     <HouseRoundedIcon
                         fontSize='large'
