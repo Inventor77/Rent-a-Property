@@ -9,6 +9,8 @@ const Data = [
 		beds: 2,
 		bathrooms: 3,
 		area: "5x7",
+		location: "Foreign",
+		when: "Tomorrow",
 	},
 	{
 		id: "2",
@@ -20,6 +22,8 @@ const Data = [
 		beds: 3,
 		bathrooms: 2,
 		area: "6x8",
+		location: "Foreign",
+		when: "Today",
 	},
 	{
 		id: "3",
@@ -31,6 +35,8 @@ const Data = [
 		beds: 2,
 		bathrooms: 3,
 		area: "8x5",
+		location: "Foreign",
+		when: "Today",
 	},
 	{
 		id: "4",
@@ -42,6 +48,8 @@ const Data = [
 		beds: 3,
 		bathrooms: 2,
 		area: "5x7",
+		location: "India",
+		when: "Today",
 	},
 	{
 		id: "5",
@@ -53,6 +61,8 @@ const Data = [
 		beds: 2,
 		bathrooms: 3,
 		area: "7x7",
+		location: "India",
+		when: "Today",
 	},
 	{
 		id: "6",
@@ -64,6 +74,8 @@ const Data = [
 		beds: 3,
 		bathrooms: 2,
 		area: "5x5",
+		location: "India",
+		when: "Tomorrow",
 	},
 	{
 		id: "7",
@@ -75,6 +87,8 @@ const Data = [
 		beds: 2,
 		bathrooms: 3,
 		area: "9x7",
+		location: "India",
+		when: "Tomorrow",
 	},
 	{
 		id: "8",
@@ -86,6 +100,8 @@ const Data = [
 		beds: 3,
 		bathrooms: 2,
 		area: "8x7",
+		location: "India",
+		when: "Tomorrow",
 	},
 	{
 		id: "9",
@@ -97,6 +113,8 @@ const Data = [
 		beds: 2,
 		bathrooms: 3,
 		area: "5x4",
+		location: "India",
+		when: "Today",
 	},
 	{
 		id: "10",
@@ -108,6 +126,8 @@ const Data = [
 		beds: 3,
 		bathrooms: 2,
 		area: "9x9",
+		location: "Foreign",
+		when: "Today",
 	},
 ];
 
