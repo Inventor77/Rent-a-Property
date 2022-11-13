@@ -7,10 +7,24 @@ import {
     IconButton,
     Typography,
     Grid,
-    Divider
+    Divider,
+    Paper,
+    experimentalStyled as styled
 } from '@mui/material';
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
+import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
+import BathtubOutlinedIcon from '@mui/icons-material/BathtubOutlined';
+import GrassIcon from '@mui/icons-material/Grass';
 import "./Card.scss"
+
+const Item = styled(Paper)(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: 'center',
+    padding: theme.spacing(2),
+    color: "#999",
+}));
 
 
 function PropertyCard(props) {
@@ -52,14 +66,20 @@ function PropertyCard(props) {
             <Divider variant='middle' />
             <CardActions >
                 <Grid container spacing={0}>
-                    <Grid xs={2}>
-                        <Typography>xs=8</Typography>
+                    <Grid xs={3}>
+                        <Item elevation={1}>
+                            <BedOutlinedIcon sx={{ color: "#6F65EF" }} />
+                        </Item>
                     </Grid>
-                    <Grid xs={2}>
-                        <Typography>xs=4</Typography>
+                    <Grid xs={6}>
+                        <Item elevation={1}>
+                            <BathtubOutlinedIcon sx={{ color: "#6F65EF" }} />
+                        </Item>
                     </Grid>
-                    <Grid xs={2}>
-                        <Typography>xs=4</Typography>
+                    <Grid xs={3}>
+                        <Item elevation={1}>
+                            <GrassIcon sx={{ color: "#6F65EF" }} />
+                        </Item>
                     </Grid>
                 </Grid>
             </CardActions>
