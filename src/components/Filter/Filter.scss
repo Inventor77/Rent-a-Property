@@ -1,0 +1,19 @@
+.filter_container {
+    background: #FFFFFF;
+    padding: 32px;
+    margin-bottom: 36px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    border-radius: 12px;
+    border: 1px solid #EEEEEE;
+}
+
+.btn {
+	border-radius: 6px !important;
+	font-size: 15px !important;
+	padding: 12px 24px !important;
+	font-weight: 700 !important;
+	white-space: nowrap;
+    vertical-align: bottom;
+}
