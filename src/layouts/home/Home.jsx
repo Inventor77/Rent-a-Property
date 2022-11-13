@@ -16,7 +16,7 @@ function Home() {
 					<Filter />
 					<Grid container className='card_container'>
 						{Data.map((data) => (
-							<Card data={data} />
+							<Card key={data.id} data={data} />
 						))}
 					</Grid>
 				</Container>
