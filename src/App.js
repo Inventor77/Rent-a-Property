@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import HomePage from "./pages/homePage";
+import { FilterProvider } from "./Context/FilterContext";
 
 const theme = createTheme({
 	palette: {
@@ -8,19 +9,20 @@ const theme = createTheme({
 			main: "#6F65EF",
 		},
 		secondary: {
-			// This is green.A700 as hex.
 			main: "##E8E8EF",
 		},
 	},
 });
 
 function App() {
-  return (
-    <ThemeProvider theme={theme}>
-		<div className='App'>
-			<HomePage />
-      </div>
-    </ThemeProvider>
+	return (
+		<ThemeProvider theme={theme}>
+			<FilterProvider>
+				<div className='App'>
+					<HomePage />
+				</div>
+			</FilterProvider>
+		</ThemeProvider>
 	);
 }
 
