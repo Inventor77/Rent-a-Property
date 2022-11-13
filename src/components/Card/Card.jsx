@@ -21,9 +21,10 @@ const Item = styled(Paper)(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    textAlign: 'center',
-    padding: theme.spacing(2),
+    textAlign: 'left',
+    padding: `${theme.spacing(2)} ${theme.spacing(0)}`,
     color: "#999",
+    fontSize: "15px"
 }));
 
 
@@ -31,15 +32,15 @@ function PropertyCard(props) {
     const { data } = props;
     // console.log(data);
     return (
-        <Card sx={{ width: 345, maxWidth: 345, borderRadius: "10px" }}>
+        <Card sx={{ width: 384, maxWidth: 384, borderRadius: "10px" }}>
             <CardMedia
                 component="img"
-                height="200"
+                height="242"
                 image={data?.img}
                 alt="Paella dish"
             />
             <CardContent >
-                <Grid container spacing={-2} direction="row" sx={{ marginTop: "12px" }} >
+                <Grid container spacing={-2} direction="row" sx={{ marginTop: "16px" }} >
                     <Grid
                         container
                         spacing={0}
@@ -66,19 +67,19 @@ function PropertyCard(props) {
             <Divider variant='middle' />
             <CardActions >
                 <Grid container spacing={0}>
-                    <Grid xs={3}>
-                        <Item elevation={1}>
-                            <BedOutlinedIcon sx={{ color: "#6F65EF" }} />
+                    <Grid xs>
+                        <Item elevation={0}>
+                            <BedOutlinedIcon sx={{ color: "#6F65EF", mr: "8px" }} /> {`${data?.beds} Beds`}
                         </Item>
                     </Grid>
-                    <Grid xs={6}>
-                        <Item elevation={1}>
-                            <BathtubOutlinedIcon sx={{ color: "#6F65EF" }} />
+                    <Grid xs>
+                        <Item elevation={0}>
+                            <BathtubOutlinedIcon sx={{ color: "#6F65EF", mr: "8px" }} /> {`${data?.bathrooms} Bathrooms`}
                         </Item>
                     </Grid>
-                    <Grid xs={3}>
-                        <Item elevation={1}>
-                            <GrassIcon sx={{ color: "#6F65EF" }} />
+                    <Grid xs>
+                        <Item elevation={0}>
+                            <GrassIcon sx={{ color: "#6F65EF", mr: "8px" }} /> {`${data?.area}m`}<sup>2</sup>
                         </Item>
                     </Grid>
                 </Grid>
