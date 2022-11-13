@@ -27,10 +27,12 @@ const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
 
 const LOCATION = ["All"];
 const PRICE_RANGE = ["All", 500, 1500, 2500];
+const PROPERTY_TYPE = ["All", "Apartment", "Villa", "2-BHK"];
 
 function Filter() {
-	const [location, setLocation] = useState("All");
-	const [priceRange, setPriceRange] = useState("All");
+	const [location, setLocation] = useState(LOCATION[0]);
+	const [priceRange, setPriceRange] = useState(PRICE_RANGE[0]);
+	const [propertyType, setPropertyType] = useState(PROPERTY_TYPE[0]);
 
 	return (
 		<Container className='filter_container'>
@@ -71,9 +73,14 @@ function Filter() {
 			<FormControl size='small' sx={{ width: "25ch" }} variant='outlined'>
 				<StyledFormHelperText>Property Type</StyledFormHelperText>
 				<StyledSelect
-				// value={}
-				// onChange={handleChange}
-				></StyledSelect>
+					value={propertyType}
+					onChange={(e) => setPropertyType(e.target.value)}>
+					{PROPERTY_TYPE.map((val) => (
+						<MenuItem key={val} value={val}>
+							{val}
+						</MenuItem>
+					))}
+				</StyledSelect>
 			</FormControl>
 			<Divider orientation='vertical' flexItem />
 			<Button variant='contained' className='search_btn'>
