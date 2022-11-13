@@ -25,9 +25,11 @@ const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
 	fontSize: "16px",
 }));
 
+const LOCATION = ["All"];
 const PRICE_RANGE = ["All", 500, 1500, 2500];
 
 function Filter() {
+	const [location, setLocation] = useState("All");
 	const [priceRange, setPriceRange] = useState("All");
 
 	return (
@@ -35,9 +37,14 @@ function Filter() {
 			<FormControl size='small' sx={{ width: "25ch" }} variant='outlined'>
 				<StyledFormHelperText>Location</StyledFormHelperText>
 				<StyledSelect
-				// value={}
-				// onChange={handleChange}
-				></StyledSelect>
+					value={location}
+					onChange={(e) => setLocation(e.target.value)}>
+					{LOCATION.map((val) => (
+						<MenuItem key={val} value={val}>
+							{val}
+						</MenuItem>
+					))}
+				</StyledSelect>
 			</FormControl>
 			<Divider orientation='vertical' flexItem />
 			<FormControl size='small' sx={{ width: "25ch" }} variant='outlined'>
