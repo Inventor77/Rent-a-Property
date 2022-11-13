@@ -26,12 +26,14 @@ const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
 	fontSize: "16px",
 }));
 
-const LOCATION = ["All"];
+const LOCATION = ["All", "India", "Foreign"];
+const WHEN = ["All", "Today", "Tomorrow"];
 const PRICE_RANGE = ["All", 500, 1500, 2500];
 const PROPERTY_TYPE = ["All", "Apartment", "Villa", "2-BHK"];
 
 function Filter() {
 	const [location, setLocation] = useState(LOCATION[0]);
+	const [when, setWhen] = useState(WHEN[0]);
 	const [priceRange, setPriceRange] = useState(PRICE_RANGE[0]);
 	const [propertyType, setPropertyType] = useState(PROPERTY_TYPE[0]);
 
@@ -52,10 +54,14 @@ function Filter() {
 			<Divider orientation='vertical' flexItem />
 			<FormControl size='small' sx={{ width: "25ch" }} variant='outlined'>
 				<StyledFormHelperText>When</StyledFormHelperText>
-				<StyledSelect
-				// value={}
-				// onChange={handleChange}
-				></StyledSelect>
+				<StyledSelect value={when} onChange={(e) => setWhen(e.target.value)}>
+					{WHEN.map((val) => (
+						<MenuItem key={val} value={val}>
+							{" "}
+							{val}
+						</MenuItem>
+					))}
+				</StyledSelect>
 			</FormControl>
 			<Divider orientation='vertical' flexItem />
 			<FormControl size='small' sx={{ width: "25ch" }} variant='outlined'>
