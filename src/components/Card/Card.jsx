@@ -9,12 +9,14 @@ import {
     Grid,
     Divider,
     Paper,
-    experimentalStyled as styled
+    experimentalStyled as styled,
+    Box
 } from '@mui/material';
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
 import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
 import BathtubOutlinedIcon from '@mui/icons-material/BathtubOutlined';
 import GrassIcon from '@mui/icons-material/Grass';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import "./Card.scss"
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -27,18 +29,53 @@ const Item = styled(Paper)(({ theme }) => ({
     fontSize: "15px"
 }));
 
+const SideTag = styled(Box)(({ theme }) => ({
+    position: "absolute",
+    top: "225px",
+    left: "-13px",
+    background: "#6F65EF",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: 'left',
+    padding: `${theme.spacing(1)} ${theme.spacing(4)}`,
+    color: "#FFFFFF",
+    fontWeight: "600",
+    fontSize: "16px",
+    borderRadius: "10px 10px 10px 0px",
+    "&::before": {
+        position: "absolute",
+        top: "34px",
+        left: "0px",
+        content: '""',
+        display: "block",
+        height: "0px",
+        width: "0px",
+        background: "",
+        borderTop: "6.5px solid #69639A",
+        borderRight: "6.5px solid #69639A",
+        borderBottom: "6.5px solid transparent",
+        borderLeft: "6.5px solid transparent",
+        // borderRadius: "0px 0px 0px 100px",
+    }
+}));
+
 
 function PropertyCard(props) {
     const { data } = props;
     // console.log(data);
     return (
-        <Card sx={{ width: 384, maxWidth: 384, borderRadius: "10px" }}>
+        <Box sx={{ position: "relative" }}>
+            <Card sx={{ width: 384, maxWidth: 384, borderRadius: "10px" }}>
             <CardMedia
                 component="img"
                 height="242"
                 image={data?.img}
                 alt="Paella dish"
             />
+                <SideTag >
+                    <AutoAwesomeIcon sx={{ color: "#FFFFFF", mr: "8px", fontSize: "medium" }} /> Popular
+                </SideTag>
             <CardContent >
                 <Grid container spacing={-2} direction="row" sx={{ marginTop: "16px" }} >
                     <Grid
@@ -84,7 +121,8 @@ function PropertyCard(props) {
                     </Grid>
                 </Grid>
             </CardActions>
-        </Card>
+            </Card>
+        </Box>
     );
 }
 
