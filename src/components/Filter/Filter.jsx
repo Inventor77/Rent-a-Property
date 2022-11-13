@@ -10,6 +10,8 @@ import {
 	experimentalStyled as styled,
 } from "@mui/material";
 import "./Filter.scss";
+import Data from "../../demo_data";
+import { useFilter } from "../../Context/FilterContext";
 
 const StyledSelect = styled(Select)(({ theme }) => ({
 	color: "#000000",
@@ -36,6 +38,33 @@ function Filter() {
 	const [when, setWhen] = useState(WHEN[0]);
 	const [priceRange, setPriceRange] = useState(PRICE_RANGE[0]);
 	const [propertyType, setPropertyType] = useState(PROPERTY_TYPE[0]);
+	const [filter, setFilter] = useFilter();
+
+	function filterLocation(data, value = location) {
+		return value === "All" || data?.location === value;
+	}
+	function filterWhen(data, value = when) {
+		return value === "All" || data?.when === value;
+	}
+	function filterPriceRange(data, value = priceRange) {
+		return (
+			value === "All" || (data?.price >= value && data?.price <= value + 1000)
+		);
+	}
+	function filterPropertyType(data, value = propertyType) {
+		return value === "All" || data?.category === value;
+	}
+
+	function filterData() {
+		const filteredData = Data.filter(
+			(data) =>
+				filterLocation(data) &&
+				filterWhen(data) &&
+				filterPriceRange(data) &&
+				filterPropertyType(data)
+		);
+		setFilter(filteredData);
+	}
 
 	return (
 		<Container className='filter_container'>
@@ -90,7 +119,7 @@ function Filter() {
 				</StyledSelect>
 			</FormControl>
 			<Divider orientation='vertical' flexItem />
-			<Button variant='contained' className='search_btn'>
+			<Button variant='contained' className='search_btn' onClick={filterData}>
 				Search
 			</Button>
 		</Container>
