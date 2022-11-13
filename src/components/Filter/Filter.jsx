@@ -12,10 +12,11 @@ import {
 import "./Filter.scss";
 
 const StyledSelect = styled(Select)(({ theme }) => ({
-	border: "none",
-	outline: "none",
 	color: "#000000",
-	fontSize: "14px",
+	fontSize: "16px",
+	fontWeight: "700",
+	boxShadow: "none",
+	".MuiOutlinedInput-notchedOutline": { border: 0 },
 }));
 
 const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
