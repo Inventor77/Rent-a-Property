@@ -31,8 +31,8 @@ function Filter() {
 			<FormControl size='small' sx={{ width: "25ch" }} variant='outlined'>
 				<StyledFormHelperText>Location</StyledFormHelperText>
 				<StyledSelect
-				// value={}
-				// onChange={handleChange}
+					// value={}
+					// onChange={handleChange}
 				></StyledSelect>
 			</FormControl>
 			<Divider orientation='vertical' flexItem />
@@ -60,7 +60,7 @@ function Filter() {
 				></StyledSelect>
 			</FormControl>
 			<Divider orientation='vertical' flexItem />
-			<Button variant='contained' className='btn'>
+			<Button variant='contained' className='search_btn'>
 				Search
 			</Button>
 		</Container>
